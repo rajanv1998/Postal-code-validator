@@ -1,0 +1,42 @@
+<div class="postal-code-settings">
+  <div class="postal-code-container">
+    <span>Do we deliver?</span>
+    <textarea id="validPostalCodes" style="display: none;">{{ settings.valid_postal_codes }}</textarea>
+    <div class="postal_row">
+      <input type="text" id="postalCodeInput" placeholder="Enter your postal code">
+      <button id="checkPostalCodeBtn">
+        <span class="btntxt">Go</span>
+        <span class="loadingsvg hide"><svg width="18" height="18" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="8.042%" y1="0%" x2="65.682%" y2="23.865%" id="a"><stop stop-color="#fff" stop-opacity="0" offset="0%"></stop><stop stop-color="#fff" stop-opacity=".631" offset="63.146%"></stop><stop stop-color="#fff" offset="100%"></stop></linearGradient></defs><g transform="translate(1 1)" fill="none" fill-rule="evenodd"><path d="M36 18c0-9.94-8.06-18-18-18" stroke="url(#a)" stroke-width="2"><animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="0.9s" repeatCount="indefinite"></animateTransform></path><circle fill="#fff" cx="36" cy="18" r="1"><animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="0.9s" repeatCount="indefinite"></animateTransform></circle></g></svg></span>
+      </button>
+      <a href="#" class="postal_close">
+        <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12zm0 1c6.071 0 11 4.929 11 11s-4.929 11-11 11-11-4.929-11-11 4.929-11 11-11zm0 10.293l5.293-5.293.707.707-5.293 5.293 5.293 5.293-.707.707-5.293-5.293-5.293 5.293-.707-.707 5.293-5.293-5.293-5.293.707-.707 5.293 5.293z"></path></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="postalcode_popup">
+  <div class="postalcode_popup_container">
+    <div class="postalcodecontent">
+      <div class="postalcode_body">
+        <h3 class="heading_popup"></h3>
+        <p class="subheading_popup"></p>
+        <a href="#" class="continue_btn">Continue shopping</a>
+      </div>
+    </div>
+  </div> 
+</div>
+<!-- settings_schema.json -->
+{% schema %}
+{
+    "name": "Postal Code Settings",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "valid_postal_codes",
+        "label": "Valid Postal Codes",
+        "info": "Enter valid postal codes separated by commas."
+      }
+    ]
+  }
+  {% endschema %}
